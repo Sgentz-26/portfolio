@@ -1,74 +1,184 @@
+/* Reset & Global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  /* 
+    If you want the header and footer to 'stick'
+    to top/bottom without scrolling, use position: fixed.
+    Otherwise, use the Flexbox approach below for a 
+    normal layout with a sticky footer.
+  */
+  
+  /* 
+    FLEXBOX LAYOUT FOR A STICKY FOOTER 
+    (header is at top, footer at bottom, 
+     main grows to fill space) 
+  */
+  
+  html,
+  body {
+    height: 100%;              /* Ensure the browser knows to stretch to full height */
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
-    padding: 20px;
-}
-
-/* Header Styles */
-header {
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;    /* Stack header, main, footer vertically */
+  }
+  
+  /* Header */
+  header {
     background-color: #1a1a1d;
     padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
     text-align: center;
-}
-
-header nav ul {
+    width: 100%;
+    flex-shrink: 0;           /* Prevent the header from shrinking */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-}
-
-header nav li {
+  }
+  
+  header nav li {
     margin: 0 15px;
-}
-
-header nav a {
+  }
+  
+  header nav a {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
     padding: 10px 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-header nav a:hover {
+  }
+  
+  header nav a:hover {
     background-color: #e63946;
     color: #fff;
     border-radius: 5px;
-}
+  }
+  
+  /* Main Content Wrapper */
+  main {
+    flex: 1;        /* Grow and fill available space */
+    padding: 20px;  /* Padding for content spacing */
+  }
 
-/* Footer Styles */
-footer {
+  /* Footer (Sticky at bottom) */
+  footer {
     text-align: center;
     padding: 20px;
     background-color: #1a1a1d;
     color: #fff;
     font-size: 14px;
     width: 100%;
+    flex-shrink: 0; /* Prevent footer from shrinking */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-footer a {
+  }
+  
+  footer a {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
     font-size: 20px;
-}
-
-footer a:hover {
+  }
+  
+  footer a:hover {
     color: #f39c12;
-}
-
-/* Card Styles */
-.project-card {
+  }
+  
+  /* =======================
+     PAGE-SPECIFIC STYLES
+     ======================= */
+  
+  /* About Page */
+  .about-section {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f4f4f4;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .about-image {
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+  
+  .about-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .about-text h1,
+  .about-text p {
+    margin: 0;
+  }
+  
+  .about-text h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+    color: #e63946;
+  }
+  
+  .about-text p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #4a4a4a;
+  }
+  
+  /* Contact Page */
+  .contact-section {
+    display: absolute;
+    justify-content: center;
+    height: auto;
+    margin: auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-media-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .social-media-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-media-icons img.youtube-logo {
+    width: 60px;
+  }
+  
+  .social-media-icons a:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Projects Page */
+  .projects-section {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .project-card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,46 +188,82 @@ footer a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-}
-
-.project-card:hover {
+  }
+  
+  .project-card:hover {
     transform: translateY(-5px);
-}
-
-.project-card img {
+  }
+  
+  .project-card img {
     width: 100px;
     height: 100px;
     object-fit: contain;
     margin-right: 20px;
-}
-
-.project-card h2 {
+  }
+  
+  .project-card h2 {
     font-size: 24px;
     color: #333;
-}
-
-.project-card p {
+  }
+  
+  .project-card p {
     font-size: 16px;
     color: #666;
     margin: 10px 0;
-}
-
-.project-card a {
+  }
+  
+  .project-card a {
     text-decoration: none;
     color: #e63946;
     font-weight: bold;
     transition: color 0.3s ease;
-}
-
-.project-card a:hover {
+  }
+  
+  .project-card a:hover {
     color: #f77f00;
-}
-
-/* Social Media Icon Hover Effect */
-.social-media-icons a img {
-    transition: transform 0.3s ease;
-}
-
-.social-media-icons a:hover img {
-    transform: scale(1.1);
-}
+  }
+  
+  /* =========================
+     RESPONSIVE (MOBILE) STYLES
+     ========================= */
+  
+  @media (max-width: 768px) {
+    /* Make sections stack vertically on smaller screens */
+  
+    .about-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .about-image {
+      margin: 0 0 20px 0;
+    }
+  
+    .about-text h1 {
+      font-size: 28px;
+    }
+  
+    .about-text p {
+      font-size: 16px;
+    }
+  
+    .project-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .project-card img {
+      margin-bottom: 20px;
+    }
+  
+    .social-media-icons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .social-media-icons img {
+      margin-bottom: 10px;
+    }
+  }
+  
