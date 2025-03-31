@@ -4,20 +4,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
-  /* 
-    If you want the header and footer to 'stick'
-    to top/bottom without scrolling, use position: fixed.
-    Otherwise, use the Flexbox approach below for a 
-    normal layout with a sticky footer.
-  */
-  
-  /* 
-    FLEXBOX LAYOUT FOR A STICKY FOOTER 
-    (header is at top, footer at bottom, 
-     main grows to fill space) 
-  */
-  
+
   html,
   body {
     height: 100%;              /* Ensure the browser knows to stretch to full height */
@@ -103,10 +90,15 @@
   .about-section {
     display: flex;
     align-items: flex-start;
-    background-color: #f4f4f4;
+    justify-content: flex-start;
+    background-color: #ffffff;
     margin: 20px 0;
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .about-image {
@@ -137,6 +129,57 @@
     margin-bottom: 15px;
     color: #4a4a4a;
   }
+
+  .skills-section,
+.experience-section {
+  background-color: #ffffff;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-section h2,
+.experience-section h2 {
+  font-size: 28px;
+  color: #e63946;
+  margin-bottom: 15px;
+}
+
+.skills-list,
+.experience-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li,
+.experience-list li {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 15px;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.skills-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #e63946;
+  font-weight: bold;
+}
+
+.experience-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #e63946;
+  font-size: 20px;
+  top: 5px;
+}
   
   /* Contact Page */
   .contact-section {
@@ -180,7 +223,8 @@
   
   .project-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     justify-content: center;
     background-color: #fff;
     padding: 20px;
@@ -199,6 +243,7 @@
     height: 100px;
     object-fit: contain;
     margin-right: 20px;
+    border-radius: 50%;
   }
   
   .project-card h2 {
