@@ -12,7 +12,10 @@
             align-items: flex-start;
             background-color: #f4f4f4;
             padding: 20px;
-            margin: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .about-image {
@@ -25,6 +28,12 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
+        }
+
+        .about-image h1 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
         }
 
         .about-text h1, .about-text p {
@@ -41,7 +50,9 @@
             font-size: 18px;
             margin-bottom: 15px;
             color: #4a4a4a;
+            line-height: 1.6; /* Improves readability */
         }
+
     </style>
 </head>
 <body>
