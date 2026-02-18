@@ -1,88 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>About Me</title>
-    <style>
-        .about-section {
-            display: flex;
-            align-items: flex-start;
-            background-color: #f4f4f4;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-image {
-            flex-shrink: 0;
-            margin-right: 20px;
-        }
-
-        .about-image img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .about-image h1 {
-            margin-top: 10px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .about-text h1, .about-text p {
-            margin: 0;
-        }
-
-        .about-text h1 {
-            margin-bottom: 10px;
-            font-size: 36px;
-            color: #e63946;
-        }
-
-        .about-text p {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #4a4a4a;
-            line-height: 1.6; /* Improves readability */
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>About Me</title>
 </head>
 <body>
-    <header>
-         <nav>
-            <ul>
-                <li><a href="./index.html">About Me</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">About Me</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
     <section class="about-section">
-        <div class="about-image">
-            <img src="images/samuel-gentz.jpg" alt="Samuel Gentz">
-            <h1>Samuel Gentz</h1>
-        </div>
-        <div class="about-text">
-            <p><strong>UI/UX Developer & Business Operations Manager</strong></p>
-            <p>I’m Samuel Gentz, a software engineer with a passion for creating innovative solutions. As a co-founder of Impulse AI LLC, I’ve developed expertise in programming with Python and Java, allowing me to build both web and mobile applications. I specialize in designing user-friendly interfaces and enhancing user experiences while also diving into backend development when needed. I enjoy staying at the forefront of technology, always exploring new tools and programming techniques to improve my skills.</p>
-        </div>
+      <div class="about-image">
+        <img src="images/samuel-gentz.jpg" alt="Samuel Gentz" />
+        <h1>Samuel Gentz</h1>
+      </div>
+      <div class="about-text">
+        <p><strong>UI/UX Developer &amp; Business Operations Manager</strong></p>
+        <p>
+            I’m Samuel Gentz, a software engineer with a passion for creating innovative solutions. As a co-founder of <strong><a href="https://impulseai.ai/" target="_blank">Impulse AI LLC</a></strong>, I’ve developed expertise in programming with Python and Java, allowing me to build both web and mobile applications. I specialize in designing user-friendly interfaces and enhancing user experiences while also diving into backend development when needed. I enjoy staying at the forefront of technology, always exploring new tools and programming techniques to improve my skills.
+        </p>
+      </div>
+    </section>
+
+    <section class="skills-section">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><strong>Languages:</strong> Java, Python, C, C++, HTML, CSS, JavaScript</li>
+        <li><strong>Frameworks & Tools:</strong> Spring Boot, Android Studio, Visual Studio, React, Maven, Gradle, Git</li>
+        <li><strong>UI/UX Design:</strong> Responsive Web Design, Figma Prototypes, Frontend Optimization</li>
+        <li><strong>Version Control:</strong> Git, GitHub, GitLab</li>
+        <li><strong>Database:</strong> Firebase, MongoDB, MySQL</li>
+      </ul>
     </section>
     
-    <footer>
-        <p>&copy; 2024 Samuel Gentz</p>
-        <p>Follow me on:</p>
-        <a href="https://www.youtube.com/@sgentz" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/samuel_gentz/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/samuel-gentz/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </footer>
+    <section class="experience-section">
+      <h2>Experience</h2>
+      <ul class="experience-list">
+        <li><strong>Co-Founder & UI/UX Developer – Impulse AI LLC</strong><br />
+        Designed intuitive interfaces and built full-stack web and mobile apps using Java and Python. Managed business operations including client relations, marketing, and product strategy.</li>
+        
+        <li><strong>Mobile Developer – Suitemates (Academic Project)</strong><br />
+        Built a full-featured Android app for roommate and housing matching. Focused on frontend design and functionality using Android Studio with Spring Boot backend integration.</li>
+    
+        <li><strong>Public Relations Chair – Beta Sigma Psi</strong><br />
+        Managed social media, created branded content, and coordinated with Greek organizations. Designed and ordered merchandise for events and promotions.</li>
+    
+        <li><strong>CyStarter Program Participant – Iowa State University</strong><br />
+        Selected for a startup accelerator program. Attended entrepreneurial sessions to refine business model and product offerings.</li>
+      </ul>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Samuel Gentz</p>
+    <p>Follow me on:</p>
+    <a href="https://www.youtube.com/@sgentz" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.instagram.com/samuel_gentz/" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/samuel-gentz/" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
 </body>
 </html>
