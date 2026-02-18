@@ -3,19 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("portfolio-theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var useDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+        if (useDark) {
+          document.documentElement.classList.add("dark-theme");
+          document.documentElement.style.colorScheme = "dark";
+        } else {
+          document.documentElement.style.colorScheme = "light";
+        }
+      } catch (error) {}
+    })();
+  </script>
   <title>Projects</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="theme.js" defer></script>
 </head>
 <body>
   <header>
     <nav>
       <ul>
         <li><a href="./index.html">About Me</a></li>
-        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./projects.html" class="active" aria-current="page">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="theme-toggle" aria-label="Theme controls">
+      <button type="button" class="theme-btn" data-theme="light" aria-label="Switch to light mode" title="Light mode">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button type="button" class="theme-btn" data-theme="dark" aria-label="Switch to dark mode" title="Dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -88,12 +112,47 @@
           </div>
         </div>
       </div>
+      <div class="project-card">
+        <img src="images/impulse-analyzer.png" alt="Impulse Analyzer Logo" />
+        <div>
+          <h2>Impulse Analyzer</h2>
+          <p>
+            Built for Impulse AI LLC, Impulse Analyzer is a self-hosted AI analytics platform that connects directly to client SQL databases with no data migration or external warehouse requirement. I designed the full UI/UX experience, AI graphing workflows, calendar syncing, AI calendar integration, and employee directory integrations.
+            <br><br>
+            I also implemented Stripe payments and billing, license-key-based company mapping, AI endpoint usage tracking, daily cost aggregation with markup logic, performance optimizations, and chat exporting. The platform supports natural-language-to-SQL querying, context-aware follow-up questions, and secure in-session data handling inside client infrastructure.
+          </p>
+          <div style="display: flex; flex-direction: row; gap: 5px; align-items: center;">
+            <a
+              href="https://impulseanalyzer.com/"
+              target="_blank"
+              >Website</a
+            >
+            <p><strong> | </strong></p>
+            <a
+              href="https://www.youtube.com/watch?v=_KuRMdgdGt8&t"
+              target="_blank"
+              >DEMO Video</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/ghost-automations-discord-bot.png" alt="Ghost Automations Discord Bot Logo" />
+        <div>
+          <h2>Ghost Automations Discord Bot</h2>
+          <p>
+            Ghost Automations Discord Bot is an AI-powered support assistant I built for Discord communities. It is connected to an AI model, hooked into a vector database, and uses retrieval-augmented generation (RAG) to retrieve software-specific support knowledge before generating responses.
+            <br><br>
+            This architecture helps the assistant provide faster, more accurate answers by grounding each response in relevant documentation stored in the vector database.
+          </p>
+        </div>
+      </div>
       <!-- Add more project-cards as needed -->
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 Samuel Gentz</p>
+    <p>&copy; 2026 Samuel Gentz</p>
     <p>Follow me on:</p>
     <a href="https://www.youtube.com/@sgentz" target="_blank">
       <i class="fab fa-youtube"></i>
@@ -103,6 +162,9 @@
     </a>
     <a href="https://www.linkedin.com/in/samuel-gentz/" target="_blank">
       <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/Bluecool97" target="_blank">
+      <i class="fab fa-github"></i>
     </a>
   </footer>
 </body>

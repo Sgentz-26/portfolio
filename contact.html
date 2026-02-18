@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("portfolio-theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var useDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+        if (useDark) {
+          document.documentElement.classList.add("dark-theme");
+          document.documentElement.style.colorScheme = "dark";
+        } else {
+          document.documentElement.style.colorScheme = "light";
+        }
+      } catch (error) {}
+    })();
+  </script>
   <title>Contact</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="theme.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,9 +29,17 @@
       <ul>
         <li><a href="./index.html">About Me</a></li>
         <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./contact.html" class="active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
+    <div class="theme-toggle" aria-label="Theme controls">
+      <button type="button" class="theme-btn" data-theme="light" aria-label="Switch to light mode" title="Light mode">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button type="button" class="theme-btn" data-theme="dark" aria-label="Switch to dark mode" title="Dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -44,12 +68,15 @@
           target="_blank"
           ><img src="images/LinkedIn_logo.png" alt="LinkedIn"
         /></a>
+        <a href="https://github.com/Bluecool97" target="_blank"
+          ><img src="images/GitHub_logo.png" alt="GitHub"
+        /></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 Samuel Gentz</p>
+    <p>&copy; 2026 Samuel Gentz</p>
     <p>Follow me on:</p>
     <a href="https://www.youtube.com/@sgentz" target="_blank"
       ><i class="fab fa-youtube"></i
@@ -59,6 +86,9 @@
     ></a>
     <a href="https://www.linkedin.com/in/samuel-gentz/" target="_blank"
       ><i class="fab fa-linkedin"></i
+    ></a>
+    <a href="https://github.com/Bluecool97" target="_blank"
+      ><i class="fab fa-github"></i
     ></a>
   </footer>
 </body>

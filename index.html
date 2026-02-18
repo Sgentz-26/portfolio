@@ -3,19 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("portfolio-theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var useDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+        if (useDark) {
+          document.documentElement.classList.add("dark-theme");
+          document.documentElement.style.colorScheme = "dark";
+        } else {
+          document.documentElement.style.colorScheme = "light";
+        }
+      } catch (error) {}
+    })();
+  </script>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="theme.js" defer></script>
   <title>About Me</title>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="./index.html">About Me</a></li>
+        <li><a href="./index.html" class="active" aria-current="page">About Me</a></li>
         <li><a href="./projects.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="theme-toggle" aria-label="Theme controls">
+      <button type="button" class="theme-btn" data-theme="light" aria-label="Switch to light mode" title="Light mode">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button type="button" class="theme-btn" data-theme="dark" aria-label="Switch to dark mode" title="Dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -35,11 +59,21 @@
     <section class="skills-section">
       <h2>Skills</h2>
       <ul class="skills-list">
-        <li><strong>Languages:</strong> Java, Python, C, C++, HTML, CSS, JavaScript</li>
-        <li><strong>Frameworks & Tools:</strong> Spring Boot, Android Studio, Visual Studio, React, Maven, Gradle, Git</li>
-        <li><strong>UI/UX Design:</strong> Responsive Web Design, Figma Prototypes, Frontend Optimization</li>
-        <li><strong>Version Control:</strong> Git, GitHub, GitLab</li>
-        <li><strong>Database:</strong> Firebase, MongoDB, MySQL</li>
+        <li><strong>Programming Languages:</strong> Java, Python, C, C++, TypeScript, JavaScript, HTML, CSS</li>
+        <li><strong>Frameworks & Development:</strong> Spring Boot, React, Android (Android Studio), Maven, Gradle</li>
+        <li><strong>Cloud & API Integration:</strong> Google Cloud Platform (OAuth, APIs), Microsoft Azure (Entra ID, App Registrations), REST API Design & Integration</li>
+        <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Firebase</li>
+        <li><strong>DevOps & Tooling:</strong> Git, GitHub, GitLab, CI/CD workflows, Cross-platform deployment (Windows, macOS, Linux)</li>
+        <li><strong>Application Development:</strong>
+          <ul class="skills-sublist">
+            <li>Full-Stack Web Applications</li>
+            <li>Mobile Applications (iOS & Android)</li>
+            <li>Desktop Applications</li>
+            <li>VR Applications (Meta Quest)</li>
+          </ul>
+        </li>
+        <li><strong>Automation & Systems:</strong> Spreadsheet automation (Excel / Google Sheets scripting), reverse engineering automation (mobile & web workflows), custom process automation tools</li>
+        <li><strong>Bots & Extensions:</strong> Chrome Extension Development, Discord Bots, Telegram Bots</li>
       </ul>
     </section>
     
@@ -63,7 +97,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Samuel Gentz</p>
+    <p>&copy; 2026 Samuel Gentz</p>
     <p>Follow me on:</p>
     <a href="https://www.youtube.com/@sgentz" target="_blank">
       <i class="fab fa-youtube"></i>
@@ -73,6 +107,9 @@
     </a>
     <a href="https://www.linkedin.com/in/samuel-gentz/" target="_blank">
       <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/Bluecool97" target="_blank">
+      <i class="fab fa-github"></i>
     </a>
   </footer>
 </body>
